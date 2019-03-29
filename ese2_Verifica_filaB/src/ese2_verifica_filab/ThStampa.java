@@ -9,11 +9,21 @@ package ese2_verifica_filab;
  *
  * @author spangaro_francesco
  */
-public class ThStampa extends Thread{
+public class ThStampa extends Thread {
+
     private DatiCondivisi ptrDati;
 
     public ThStampa(DatiCondivisi ptrDati) {
         this.ptrDati = ptrDati;
     }
-    
+
+    @Override
+    public void run() {
+        ptrDati.waitFineCont1();
+        ptrDati.waitFineCont2();
+        for (int i = 0; i < ptrDati.getTrovati().length; i++) {
+            System.out.println(ptrDati.getTrovati()[i]);
+        }
+        System.out.println("Fine trovati");
+    }
 }

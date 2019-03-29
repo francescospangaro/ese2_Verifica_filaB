@@ -15,5 +15,18 @@ public class ThControllaSecondaMeta extends Thread{
     public ThControllaSecondaMeta(DatiCondivisi ptrDati) {
         this.ptrDati = ptrDati;
     }
-    
+     @Override
+     public void run(){
+         ptrDati.waitFineIns();
+         char str = ptrDati.getStr();
+        String[] daControllare = ptrDati.getElencoAGENDA_CELL();
+        String[] trovati = new String[10];
+        for(int i = 0;  i < 5; i++){
+            if(daControllare[i].charAt(0) == str){
+                trovati[i+5]=daControllare[i];
+            }
+        }
+        ptrDati.setTrovati2(trovati);
+        ptrDati.signalFineCont2();
+     }
 }

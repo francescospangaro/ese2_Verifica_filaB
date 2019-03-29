@@ -18,10 +18,17 @@ public class ThControllaPrimaMeta extends Thread{
     
     @Override
     public void run(){
-        ptrDati.getInseriti();
+        ptrDati.waitFineIns();
+        char str = ptrDati.getStr();
+        String[] daControllare = ptrDati.getElencoAGENDA_CELL();
+        String[] trovati = new String[10];
         for(int i = 0;  i < 5; i++){
-            
+            if(daControllare[i].charAt(0) == str){
+                trovati[i]=daControllare[i];
+            }
         }
+        ptrDati.setTrovati1(trovati);
+        ptrDati.signalFineCont1();
     }
     
 }

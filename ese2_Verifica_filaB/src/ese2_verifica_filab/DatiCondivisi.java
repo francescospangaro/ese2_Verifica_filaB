@@ -19,8 +19,10 @@ public class DatiCondivisi {
         "34192883000", "34092882012", "023928833", "1234567890"};
     
     private String[] trovati;
+    private String[] trovati1;
+    private String[] trovati2;
     private String[] inseriti;
-    private String str;
+    private char str;
     
     private Semaphore fineIns;
     private Semaphore fineCont1;
@@ -98,11 +100,11 @@ public class DatiCondivisi {
         this.trovati = trovati;
     }
 
-    public String getStr() {
+    public char getStr() {
         return str;
     }
 
-    public void setStr(String str) {
+    public void setStr(char str) {
         this.str = str;
     }
 
@@ -112,6 +114,22 @@ public class DatiCondivisi {
 
     public void setInseriti(String[] inseriti) {
         this.inseriti = inseriti;
+    }
+
+    public String[] getTrovati1() {
+        return trovati1;
+    }
+
+    public void setTrovati1(String[] trovati1) {
+        this.trovati1 = trovati1;
+    }
+
+    public String[] getTrovati2() {
+        return trovati2;
+    }
+
+    public void setTrovati2(String[] trovati2) {
+        this.trovati2 = trovati2;
     }
     
     
